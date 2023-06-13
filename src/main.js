@@ -1,6 +1,6 @@
 let arr = [];
 let postElements;
-const baseurl = '/Users/Виктор/projects/work/working-project';
+
 
 async function fetchPosts() {
   try {
@@ -12,7 +12,7 @@ async function fetchPosts() {
       let li = document.createElement('li');
       let a = document.createElement('a');
       let text = document.createTextNode(el.title);
-      a.setAttribute('href', `${baseurl}/post.html&id=${el.id}`);
+      a.setAttribute('href', `post.html?id=${el.id}`);
   
       a.appendChild(text);
       li.appendChild(a);
