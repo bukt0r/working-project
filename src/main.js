@@ -31,6 +31,3 @@ fetchPosts();
 let app = document.getElementById('app');
 const ul = document.createElement('ul');
 app.appendChild(ul)
-
-
-
