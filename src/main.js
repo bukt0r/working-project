@@ -17,12 +17,17 @@ async function fetchPosts() {
       let a = document.createElement('a');
       let text = document.createTextNode(el.title);
       a.setAttribute('href', `post.html?id=${el.id}`);
-      let authorElement = document.createTextNode(user.name)
+      let authorLink = document.createElement('a');
+      let authorElement = document.createTextNode(user.name);
+      authorLink.setAttribute('href', `author.html?user_id=${el.userId}`)
   
       a.appendChild(text);
       li.appendChild(a);
-      li.appendChild(authorElement);
+      authorLink.appendChild(authorElement);
+      li.appendChild(authorLink);
       ul.appendChild(li);
+
+      console.log(data, typeof data)
   
       return li; 
     });

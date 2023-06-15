@@ -1,5 +1,4 @@
-const id = window.location.search.slice(4)
-let elements;
+const id = window.location.search.slice(4);
 
 const title = document.getElementById('title');
 const body = document.getElementById('body');
@@ -14,7 +13,10 @@ async function fetchPosts() {
       const bodyText = document.createTextNode(post.body);
       body.appendChild(bodyText);
       const name = document.createTextNode(user.name);
-      author.appendChild(name);
+      const authorLink = document.createElement('a');
+      authorLink.setAttribute('href', `author.html?user_id=${post.userId}`);
+      authorLink.appendChild(name);
+      author.appendChild(authorLink);
       
     } catch (error) {
       console.log(error);
